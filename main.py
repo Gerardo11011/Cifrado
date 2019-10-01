@@ -1,18 +1,35 @@
+#Gerardo Aldair Ponce Gomez
+#A00818934
 import cesar as chizza
 import vinager as vine
 import transposition as trans
-import math
+import mutiplicative as multi
 
 
+valido = True
 
-trans.obtenermensaje()
+while valido:
+    print('''
+    ¿Cifrado desea realizar?
+    c.- Cesar
+    v.- Vinager
+    t.- Transposition
+    m.- Mutiplicative
+    ''')
 
+    cifra = input()
 
-'''    if k < tama:
-        if sinespacio[k].isalpha():
-            print ('valor de i: ',i)
-            print('valor de j: ',j)
-            matriz[i][j] = sinespacio[k]
-            k += 1
-MOIARTYCHTEYHBOEEUFW
-            '''
+    if cifra == 'c' or cifra == 'C':
+        chizza.obtenermensaje()
+        valido = False
+    elif cifra == 'v' or cifra == 'V':
+        vine.obtenermensaje()
+        valido = False
+    elif cifra == 't' or cifra == 'T':
+        trans.obtenermensaje()
+        valido = False
+    elif cifra == 'm' or cifra == 'M':
+        multi.obtenermensaje()
+        valido = False
+    else:
+        print('Dato no valido')

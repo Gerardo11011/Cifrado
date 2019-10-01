@@ -1,5 +1,6 @@
+#Gerardo Aldair Ponce Gomez
+#A00818934
 import math
-import numpy as np
 
 def mensajeInput():
     print('Ingresa tu mensaje:')

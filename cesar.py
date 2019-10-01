@@ -1,3 +1,5 @@
+#Gerardo Aldair Ponce Gomez
+#A00818934
 CLAVE_MAX = 26
 
 

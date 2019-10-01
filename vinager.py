@@ -27,46 +27,40 @@ def claveCifrado():
         clave = str(input())
         return clave
 
+#funcion que retorna la letra del alfabeto de acuerdo a su valor en el mismo
 def encontrarLLave(aux):
     for key,value in alfabeto.items():
         if  aux == str(value):
-            #print('value: ',value)
-            #print('aux: ', aux)
-            #print('llave: ', key)
             return str(key)
 
 
 def operacionMensaje(mensaje, modo, clave):
     traduccion = ''
     i = 0
+    #se escoge metodo encriptar
     if modo[0] == 'e':
         for letra in mensaje:
             if letra.isalpha():
-                #print(alfabeto.get(letra))
-                #print(alfabeto.get(clave[i]))
+                #formula matematica para calcular la posicion de la nueva letra
                 aux = str((alfabeto.get(letra) + alfabeto.get(clave[i])) % 26)
                 i = i + 1
-                #print ('iterador i', i)
-                #print ('longitud', len(clave))
                 if i == len(clave):
                     i = 0
                 traduccion += encontrarLLave(aux)
             else:
                 traduccion += str(letra)
+
+    #Se escoge metodo desencriptar
     elif modo[0] == 'd':
         for letra in mensaje:
             if letra.isalpha():
+                #formulas matematicas para calcular la posicion descencriptada de la letra
                 temp = alfabeto.get(letra) - alfabeto.get(clave[i])
                 if temp >= 0:
                     aux = str(temp % 26)
-                    #print('aux sin mod: ', aux)
                 else:
                     aux = str((temp + 26) % 26)
-                    #print('aux con mod: ', aux)
                 i = i + 1
-
-                #print ('iterador i', i)
-                #print ('longitud', len(clave))
                 if i == len(clave):
                     i = 0
                 traduccion += encontrarLLave(aux)
